@@ -7,125 +7,54 @@
 
 import SpriteKit
 import GameplayKit
-import CoreMotion
 import SwiftUI
 import UIKit
+import Combine
 
-//class GameScene: SKScene {
-//
-//    var linea : SKNode!
-//    var tutorials : SKNode!
-//    var settings : SKNode!
-//    var achievements : SKNode!
-//    var start : SKNode!
-//
-//    var motionManager = CMMotionManager()
-//    var destX:CGFloat  = 0.0
-//
-//    override func update(_ currentTime: TimeInterval) {
-//        // Called before each frame is rendered
-//
-//        //        let action = SKAction.moveTo(x: destX, duration: 1)
-//        //        linea.run(action)
-//
-//    }
-//
-//    override func didMove(to view: SKView) {
-//
-//        // 1
-//        linea = SKSpriteNode(imageNamed: "LINEA")
-//        tutorials = SKSpriteNode(imageNamed: "TUTORIALS")
-//        settings = SKSpriteNode(imageNamed: "SETTINGS")
-//        achievements = SKSpriteNode(imageNamed: "ACHIEVEMENTS")
-//        start = SKSpriteNode(imageNamed: "START")
-//
-//        linea.position = CGPoint(x: 910, y: 1080)
-//        //        linea.
-//        self.addChild(linea)
-//
-//        tutorials.position = CGPoint(x: 910, y: 900)
-//        self.addChild(tutorials)
-//
-//        settings.position = CGPoint(x: 910, y: 700)
-//        self.addChild(settings)
-//
-//        achievements.position = CGPoint(x: 910, y: 500)
-//        self.addChild(achievements)
-//
-//        start.position = CGPoint(x: 910, y: 300)
-//        self.addChild(start)
-//
-//        //        if motionManager.isAccelerometerAvailable {
-//        //            // 2
-//        //            motionManager.accelerometerUpdateInterval = 0.01
-//        //            motionManager.startAccelerometerUpdates(to: .main) {
-//        //                (data, error) in
-//        //                guard let data = data, error == nil else {
-//        //                    return
-//        //                }
-//        //
-//        //                // 3
-//        //                let currentX = self.linea.position.x
-//        //                self.destX = currentX + CGFloat(data.acceleration.x * 500)
-//        //            }
-//        //        }
-//    }
-//
-//    func movement(){
-//
-//    }
-//
-//}
-//
-func gameView(state: stateSwitch) -> SKScene {
-    let height = 2048
-    let width = 1536
-    let scene2 = SKScene()
-
+class menuScreen: SKScene {
     
-    switch state {
-    case .first:
-        return firstStage()
-    case .second:
-        return secondStage()
-    case .third:
-        break
-    }
-    
-    
-    
-    
-    
-    return scene2
-}
-
-class firstStage: SKScene {
-
-    //    var linea : SKNode!
-    //    var tutorials : SKNode!
-    //    var settings : SKNode!
-    //    var achievements : SKNode!
-    //    var start : SKNode!
+    // Altezza e Larghezza predefinite
     let height = 2048
     let width = 1536
     
+    // Creazione nodi immagini
     //    linea = SKSpriteNode(imageNamed: "LINEA")
     var tutorials = SKSpriteNode(imageNamed: "TUTORIALS")
     var settings = SKSpriteNode(imageNamed: "SETTINGS")
     var achievements = SKSpriteNode(imageNamed: "ACHIEVEMENTS")
     var start = SKSpriteNode(imageNamed: "START")
     
+    // Creazione nodi cerchi
+    let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
+    let cerchio4 = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
+    let cerchio3 = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
+    
     var linea = SKShapeNode()
     var paths = CGMutablePath()
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent!) {
+        for touch in touches {
+            let location = touch.location(in:self)
+            if cerchio4.contains(location) {
+                view?.presentScene(startScreen())
+            }
+            if cerchio2.contains(location) {
+                view?.presentScene(settingsScreen())
+            }
+            if cerchio3.contains(location) {
+                view?.presentScene(achievementsScreen())
+            }
+        }
+    }
+    
     override func didMove(to view: SKView) {
+        
         let scenex = self.scene!
-        var cerchio = SKShapeNode(circleOfRadius: CGFloat(width / 20))
-        var cerchio2 = SKShapeNode(circleOfRadius: CGFloat(width / 20))
-        var cerchio3 = SKShapeNode(circleOfRadius: CGFloat(width / 20))
-        var cerchio4 = SKShapeNode(circleOfRadius: CGFloat(width / 20))
-
-        paths.move(to: CGPoint(x:width/2, y:0))
+        let cerchio = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        //        let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        //        let cerchio3 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        //        let cerchio4 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        
         paths.move(to: CGPoint(x:width/2, y:0))
         paths.addLine(to: CGPoint(x:width/2, y:height))
         linea.path = paths
@@ -171,43 +100,272 @@ class firstStage: SKScene {
     }
 }
 
-class secondStage: SKScene{
+
+class startScreen: SKScene {
     let height = 2048
     let width = 1536
     var start = SKSpriteNode(imageNamed: "START")
-
+    let cerchio = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent!) {
+        for touch in touches {
+            let location = touch.location(in:self)
+            if cerchio.contains(location) {
+                view?.presentScene(menuScreen())
+            }
+        }
+    }
+    
     override func didMove(to view: SKView) {
         let scenex = self.scene!
         let linea = SKShapeNode()
         let paths = CGMutablePath()
         
-        paths.move(to: CGPoint(x:width/2, y:height/6))
+        paths.move(to: CGPoint(x:width/2, y:height/5 * 4))
         paths.addLine(to: CGPoint(x:width/2, y:height))
-        linea.path = paths
-        linea.strokeColor = .white
-        linea.lineWidth = 10
-        scenex.addChild(linea)
         
-        let cerchio = SKShapeNode(circleOfRadius: CGFloat(width / 20))
+        // Start Button
+        //        let cerchio = SKShapeNode(circleOfRadius: CGFloat(width / 23))
         cerchio.position = CGPoint(x: width/2, y: height/5 * 4)
         cerchio.fillColor = .white
         cerchio.strokeColor = .red
         scenex.addChild(cerchio)
         
-        //        let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(width / 20))
-        //        cerchio2.position = CGPoint(x: width/2, y: height/5 * 3)
-        //        cerchio2.fillColor = .white
-        //        cerchio2.strokeColor = .red
-        //        scene.addChild(cerchio2)
-        //
-        //        let cerchio3 = SKShapeNode(circleOfRadius: CGFloat(width / 20))
-        //        cerchio3.position = CGPoint(x: width/2, y: height/5 * 2)
-        //        cerchio3.fillColor = .white
-        //        cerchio3.strokeColor = .red
-        //        scene.addChild(cerchio3)
+        // Left branch
+        paths.move(to: CGPoint(x: width/2, y: height/5 * 4))
+        paths.addLine(to: CGPoint(x:width/3, y:height/3 * 2))
+        paths.move(to: CGPoint(x:width/3, y:height/3 * 2))
+        paths.addLine(to: CGPoint(x:width/3, y:height/2))
+        
+        // Right Branch
+        paths.move(to: CGPoint(x: width/2, y: height/5 * 4))
+        paths.addLine(to: CGPoint(x:width/3*2, y:height/3 * 2))
+        paths.move(to: CGPoint(x:width/3*2, y:height/3 * 2))
+        paths.addLine(to: CGPoint(x:width/3*2, y:height/3))
+        
+        // Hider
+        let cerchio1 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        cerchio1.position = CGPoint(x: width/3, y: height/5 * 3)
+        cerchio1.fillColor = .white
+        cerchio1.strokeColor = .red
+        scenex.addChild(cerchio1)
+        
+        // Seeker
+        let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        cerchio2.position = CGPoint(x: width/3*2, y: height/2)
+        cerchio2.fillColor = .white
+        cerchio2.strokeColor = .red
+        scenex.addChild(cerchio2)
+        
+        linea.path = paths
+        linea.strokeColor = .white
+        linea.lineWidth = 10
+        scenex.addChild(linea)
         
         start = SKSpriteNode(imageNamed: "START")
         start.position = CGPoint(x: width/2, y: height/5 * 4)
+        scenex.addChild(start)
+        
+        scenex.size = CGSize(width: width, height: height)
+        scenex.scaleMode = .aspectFill
+    }
+}
+
+class settingsScreen: SKScene {
+    let height = 2048
+    let width = 1536
+    
+    //    linea = SKSpriteNode(imageNamed: "LINEA")
+    var tutorials = SKSpriteNode(imageNamed: "TUTORIALS")
+    var settings = SKSpriteNode(imageNamed: "SETTINGS")
+    var achievements = SKSpriteNode(imageNamed: "ACHIEVEMENTS")
+    var start = SKSpriteNode(imageNamed: "START")
+    
+    let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
+    let cerchio4 = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
+    
+    
+    var linea = SKShapeNode()
+    var paths = CGMutablePath()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent!) {
+        for touch in touches {
+            let location = touch.location(in:self)
+            if cerchio4.contains(location) {
+                view?.presentScene(startScreen())
+            }
+            if cerchio2.contains(location) {
+                view?.presentScene(menuScreen())
+            }
+        }
+    }
+    
+    override func didMove(to view: SKView) {
+        
+        let scenex = self.scene!
+        let cerchio = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        //        let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        let cerchio3 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        //        let cerchio4 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        let cerchio5 = SKShapeNode(circleOfRadius: CGFloat(width / 26))
+        let cerchio6 = SKShapeNode(circleOfRadius: CGFloat(width / 26))
+
+
+        
+        let xalign = width/4
+        paths.move(to: CGPoint(x:xalign, y:0))
+        paths.addLine(to: CGPoint(x:xalign, y:height))
+        
+        paths.move(to:CGPoint(x:xalign, y:height/3*2))
+        paths.addLine(to:CGPoint(x:width/5*2, y: height/5*3))
+        
+        paths.move(to: CGPoint(x:width/5*2, y: height/5*3))
+        paths.addLine(to: CGPoint(x:width/5*2, y: height/5*2))
+        
+        linea.path = paths
+        linea.strokeColor = .white
+        linea.lineWidth = 10
+        scenex.addChild(linea)
+        
+        cerchio.position = CGPoint(x: xalign, y: height/6*5)
+        cerchio.fillColor = .white
+        cerchio.strokeColor = .red
+        scenex.addChild(cerchio)
+        
+        cerchio2.position = CGPoint(x: xalign, y: height/3*2)
+        cerchio2.fillColor = .white
+        cerchio2.strokeColor = .red
+        scenex.addChild(cerchio2)
+        
+        cerchio3.position = CGPoint(x: xalign, y: height/3)
+        cerchio3.fillColor = .white
+        cerchio3.strokeColor = .red
+        scenex.addChild(cerchio3)
+        
+        cerchio4.position = CGPoint(x: xalign, y: height/5)
+        cerchio4.fillColor = .white
+        cerchio4.strokeColor = .red
+        scenex.addChild(cerchio4)
+        
+        cerchio5.position = CGPoint(x: width/5*2, y: height/5*3)
+        cerchio5.fillColor = .white
+        cerchio5.strokeColor = .red
+        scenex.addChild(cerchio5)
+        
+        cerchio6.position = CGPoint(x: width/5*2, y: height/5*2)
+        cerchio6.fillColor = .white
+        cerchio6.strokeColor = .red
+        scenex.addChild(cerchio6)
+        
+        tutorials.position = CGPoint(x: xalign, y: height/6*5)
+        scenex.addChild(tutorials)
+        
+        settings.position = CGPoint(x: xalign, y: height/3*2)
+        scenex.addChild(settings)
+        
+        achievements.position = CGPoint(x: xalign, y: height/3)
+        scenex.addChild(achievements)
+        
+        start.position = CGPoint(x: xalign, y: height/5)
+        scenex.addChild(start)
+        
+        scenex.size = CGSize(width: width, height: height)
+        scenex.scaleMode = .aspectFill
+    }
+}
+
+class achievementsScreen: SKScene {
+    let height = 2048
+    let width = 1536
+    
+    //    linea = SKSpriteNode(imageNamed: "LINEA")
+    var tutorials = SKSpriteNode(imageNamed: "TUTORIALS")
+    var settings = SKSpriteNode(imageNamed: "SETTINGS")
+    var achievements = SKSpriteNode(imageNamed: "ACHIEVEMENTS")
+    var start = SKSpriteNode(imageNamed: "START")
+    
+    let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
+    let cerchio3 = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
+    let cerchio4 = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
+    
+    
+    var linea = SKShapeNode()
+    var paths = CGMutablePath()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent!) {
+        for touch in touches {
+            let location = touch.location(in:self)
+            if cerchio4.contains(location) {
+                view?.presentScene(startScreen())
+            }
+            if cerchio2.contains(location) {
+                view?.presentScene(settingsScreen())
+            }
+            if cerchio3.contains(location) {
+                view?.presentScene(menuScreen())
+            }
+        }
+    }
+    
+    override func didMove(to view: SKView) {
+        
+        let scenex = self.scene!
+        let cerchio = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        //        let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+//        let cerchio3 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        //        let cerchio4 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
+        let rettangolo = SKShapeNode(rect: CGRect(x: width/3, y: height/5*2, width: width/5*2, height: height/6))
+
+
+        
+        let xalign = width/4
+        paths.move(to: CGPoint(x:xalign, y:0))
+        paths.addLine(to: CGPoint(x:xalign, y:height))
+        
+        paths.move(to:CGPoint(x:xalign, y:height/2))
+        paths.addLine(to:CGPoint(x:width/3, y: height/5*2))
+        
+        linea.path = paths
+        linea.strokeColor = .white
+        linea.lineWidth = 10
+        scenex.addChild(linea)
+        
+        rettangolo.strokeColor = .red
+        rettangolo.fillColor = .white
+        scenex.addChild(rettangolo)
+        
+        cerchio.position = CGPoint(x: xalign, y: height/6*5)
+        cerchio.fillColor = .white
+        cerchio.strokeColor = .red
+        scenex.addChild(cerchio)
+        
+        cerchio2.position = CGPoint(x: xalign, y: height/3*2)
+        cerchio2.fillColor = .white
+        cerchio2.strokeColor = .red
+        scenex.addChild(cerchio2)
+        
+        cerchio3.position = CGPoint(x: xalign, y: height/2)
+        cerchio3.fillColor = .white
+        cerchio3.strokeColor = .red
+        scenex.addChild(cerchio3)
+        
+        cerchio4.position = CGPoint(x: xalign, y: height/5)
+        cerchio4.fillColor = .white
+        cerchio4.strokeColor = .red
+        scenex.addChild(cerchio4)
+        
+        
+        tutorials.position = CGPoint(x: xalign, y: height/6*5)
+        scenex.addChild(tutorials)
+        
+        settings.position = CGPoint(x: xalign, y: height/3*2)
+        scenex.addChild(settings)
+        
+        achievements.position = CGPoint(x: xalign, y: height/3)
+        scenex.addChild(achievements)
+        
+        start.position = CGPoint(x: xalign, y: height/5)
         scenex.addChild(start)
         
         scenex.size = CGSize(width: width, height: height)
