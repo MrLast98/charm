@@ -312,13 +312,8 @@ class achievementsScreen: SKScene {
         
         let scenex = self.scene!
         let cerchio = SKShapeNode(circleOfRadius: CGFloat(width / 23))
-        //        let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
-//        let cerchio3 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
-        //        let cerchio4 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
         let rettangolo = SKShapeNode(rect: CGRect(x: width/3, y: height/5*2, width: width/5*2, height: height/6))
 
-
-        
         let xalign = width/4
         paths.move(to: CGPoint(x:xalign, y:0))
         paths.addLine(to: CGPoint(x:xalign, y:height))
@@ -354,7 +349,6 @@ class achievementsScreen: SKScene {
         cerchio4.fillColor = .white
         cerchio4.strokeColor = .red
         scenex.addChild(cerchio4)
-        
         
         tutorials.position = CGPoint(x: xalign, y: height/6*5)
         scenex.addChild(tutorials)
