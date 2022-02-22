@@ -20,17 +20,68 @@ struct MenuView: View {
     
     var body: some View {
         ZStack {
-            Circle()
-                .fill(.white)
-                .frame(width: radius, height: radius, alignment: .center)
-                .position(x: UIScreen.screenWidth / 2, y: UIScreen.screenHeight / 4)
-                .onTapGesture{
-                    status = 1
-                    print(status)
-                }
             Rectangle()
                 .fill(.white)
                 .frame(width: 4, height: UIScreen.screenHeight, alignment: .center)
+    
+            VStack(spacing: 60){
+                
+                Button{
+                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                } label: {
+                    Circle()
+                        .fill(.white)
+                        .frame(width: radius, height: radius, alignment: .center)
+                        .overlay(Image("Tutorials"))
+                        .onTapGesture{
+                            status = 1
+                            print(status)
+                        }
+                    }
+                
+                Button{
+                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                } label:{
+                    Circle()
+                        .fill(.white)
+                        .frame(width: radius, height: radius, alignment: .center)
+                        .overlay(Image("Settings"))
+                        .onTapGesture{
+                            status = 2
+                            print(status)
+                        }
+                    }
+                
+                Button{
+                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                } label:{
+                    Circle()
+                        .fill(.white)
+                        .frame(width: radius, height: radius, alignment: .center)
+                        .overlay(Image("Achievements"))
+                        .onTapGesture{
+                            status = 3
+                            print(status)
+                        }
+                    }
+                
+                Button{
+                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                } label:{
+                    Circle()
+                        .fill(.white)
+                        .frame(width: radius, height: radius, alignment: .center)
+                        .overlay(Image("Start"))
+                        .onTapGesture{
+                            status = 3
+                            print(status)
+                        }
+                    }
+    
+                Spacer()
+            }
+            .padding(.top, 204)
+            
         }.edgesIgnoringSafeArea(.all)
     }
 }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ACHIEVEMENTS-2.svg",
+      "filename" : "Achievements.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ACHIEVEMENTS-1.svg",
+      "filename" : "Achievements-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ACHIEVEMENTS.svg",
+      "filename" : "Achievements-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
