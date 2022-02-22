@@ -8,31 +8,27 @@
 import SwiftUI
 import SpriteKit
 
-enum viewSwitcher: String, CaseIterable, Identifiable {
-    case main
-    case ar
-    case menu
-    var id: String { self.rawValue }
-}
+//class viewState: ObservableObject {
+//    @Published var state: Bool = false
+//    @Published var lastHiddenObject: String = ""
+//
+//    init(state: Bool, lastHiddenObject: String) {
+//        self.state = state
+//        self.lastHiddenObject = lastHiddenObject
+//    }
+//}
 
 struct ContentView: View {
-    @State var maronn: viewSwitcher = .menu
-
+//    @StateObject var menuState: viewState = viewState(state: false, lastHiddenObject: "")
+    
     var body: some View {
-        switch maronn {
-        case .main:
-            Text("A maronn")
-                .onTapGesture{ maronn = .ar }
-        case .ar:
-             MARView()
-        case .menu:
-            SpriteView(scene: menuScreen())
-        }
+//        if(menuState.state) {
+//            MARView()
+//        } else {
+//            SpriteView(scene: menuScreen())
+//        }
+        MenuView()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+

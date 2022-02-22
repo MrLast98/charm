@@ -11,10 +11,9 @@
 		0B4139FE27BD0F970008FB2C /* Prova.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0B4139FD27BD0F970008FB2C /* Prova.rcproject */; };
 		0B413A0127BD14C80008FB2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4139FF27BD14C80008FB2C /* ContentView.swift */; };
 		0B413A0227BD14C80008FB2C /* charmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B413A0027BD14C80008FB2C /* charmApp.swift */; };
+		0B6CBEBA27C5044D006E2647 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6CBEB927C5044D006E2647 /* MenuView.swift */; };
+		0B6CBEBD27C50838006E2647 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6CBEBC27C50838006E2647 /* Lottie */; };
 		0B705EC327BE9118009A8B59 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B705EC227BE9118009A8B59 /* ARView.swift */; };
-		0B705EC727BE946D009A8B59 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B705EC427BE946D009A8B59 /* GameScene.sks */; };
-		0B705EC827BE946D009A8B59 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B705EC527BE946D009A8B59 /* GameViewController.swift */; };
-		0B705EC927BE946D009A8B59 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B705EC627BE946D009A8B59 /* GameScene.swift */; };
 		0BEFEB4827BE9D3B00EA94CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BEFEB4727BE9D3B00EA94CA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -23,10 +22,8 @@
 		0B4139FD27BD0F970008FB2C /* Prova.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Prova.rcproject; sourceTree = "<group>"; };
 		0B4139FF27BD14C80008FB2C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0B413A0027BD14C80008FB2C /* charmApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = charmApp.swift; sourceTree = "<group>"; };
+		0B6CBEB927C5044D006E2647 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		0B705EC227BE9118009A8B59 /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
-		0B705EC427BE946D009A8B59 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		0B705EC527BE946D009A8B59 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		0B705EC627BE946D009A8B59 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		0B97ED2D27BF171000F12193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0BEFEB4727BE9D3B00EA94CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,6 +34,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B40CD7827BD3B0800A60494 /* FocusEntity in Frameworks */,
+				0B6CBEBD27C50838006E2647 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,9 +65,7 @@
 				0B413A0027BD14C80008FB2C /* charmApp.swift */,
 				0B4139FF27BD14C80008FB2C /* ContentView.swift */,
 				0B705EC227BE9118009A8B59 /* ARView.swift */,
-				0B705EC427BE946D009A8B59 /* GameScene.sks */,
-				0B705EC627BE946D009A8B59 /* GameScene.swift */,
-				0B705EC527BE946D009A8B59 /* GameViewController.swift */,
+				0B6CBEB927C5044D006E2647 /* MenuView.swift */,
 				0BEFEB4727BE9D3B00EA94CA /* Assets.xcassets */,
 			);
 			path = charm;
@@ -93,6 +89,7 @@
 			name = charm;
 			packageProductDependencies = (
 				0B40CD7727BD3B0800A60494 /* FocusEntity */,
+				0B6CBEBC27C50838006E2647 /* Lottie */,
 			);
 			productName = charm;
 			productReference = 0B4139D927BD02590008FB2C /* charm.app */;
@@ -124,6 +121,7 @@
 			mainGroup = 0B4139D027BD02590008FB2C;
 			packageReferences = (
 				0B40CD7627BD3B0800A60494 /* XCRemoteSwiftPackageReference "FocusEntity" */,
+				0B6CBEBB27C50838006E2647 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 0B4139DA27BD02590008FB2C /* Products */;
 			projectDirPath = "";
@@ -140,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BEFEB4827BE9D3B00EA94CA /* Assets.xcassets in Resources */,
-				0B705EC727BE946D009A8B59 /* GameScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B705EC927BE946D009A8B59 /* GameScene.swift in Sources */,
-				0B705EC827BE946D009A8B59 /* GameViewController.swift in Sources */,
+				0B6CBEBA27C5044D006E2647 /* MenuView.swift in Sources */,
 				0B413A0127BD14C80008FB2C /* ContentView.swift in Sources */,
 				0B705EC327BE9118009A8B59 /* ARView.swift in Sources */,
 				0B413A0227BD14C80008FB2C /* charmApp.swift in Sources */,
@@ -197,6 +193,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -258,6 +255,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -369,6 +367,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		0B6CBEBB27C50838006E2647 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -376,6 +382,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0B40CD7627BD3B0800A60494 /* XCRemoteSwiftPackageReference "FocusEntity" */;
 			productName = FocusEntity;
+		};
+		0B6CBEBC27C50838006E2647 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B6CBEBB27C50838006E2647 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

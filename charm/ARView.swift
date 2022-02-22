@@ -111,6 +111,7 @@ struct MARView: UIViewRepresentable {
         return normalized
     }
 }
+
 class Coordinator: NSObject, ARSessionDelegate {
     weak var view: ARView?
     var focusEntity: FocusEntity?

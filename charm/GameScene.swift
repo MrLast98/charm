@@ -11,14 +11,40 @@ import SwiftUI
 import UIKit
 import Combine
 
+//struct menuView: UIViewRepresentable {
+//    let view = SKView()
+//
+//    func makeUIView(context: Context) -> UIView {
+//
+//        return view
+//    }
+//
+//    func makeCoordinator() -> Coordinator {
+//        Coordinator()
+//    }
+//
+//    func updateUIView(_ view: UIView, context: Context) {
+//
+//    }
+//
+//
+//}
+//
+//class Coordinator2: NSObject {
+//
+//    let viewState: viewState
+//
+//    init(viewState: viewState) {
+//        self.viewState = viewState
+//    }
+//}
+
 class menuScreen: SKScene {
-    
     // Altezza e Larghezza predefinite
     let height = 2048
     let width = 1536
     
     // Creazione nodi immagini
-    //    linea = SKSpriteNode(imageNamed: "LINEA")
     var tutorials = SKSpriteNode(imageNamed: "TUTORIALS")
     var settings = SKSpriteNode(imageNamed: "SETTINGS")
     var achievements = SKSpriteNode(imageNamed: "ACHIEVEMENTS")
@@ -51,9 +77,6 @@ class menuScreen: SKScene {
         
         let scenex = self.scene!
         let cerchio = SKShapeNode(circleOfRadius: CGFloat(width / 23))
-        //        let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
-        //        let cerchio3 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
-        //        let cerchio4 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
         
         paths.move(to: CGPoint(x:width/2, y:0))
         paths.addLine(to: CGPoint(x:width/2, y:height))
@@ -102,17 +125,23 @@ class menuScreen: SKScene {
 
 
 class startScreen: SKScene {
+    @State var doStart = false
+    
     let height = 2048
     let width = 1536
     var start = SKSpriteNode(imageNamed: "START")
     let cerchio = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
-    
+    let cerchio1 = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
+    let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(1536 / 23))
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent!) {
         for touch in touches {
             let location = touch.location(in:self)
             if cerchio.contains(location) {
                 view?.presentScene(menuScreen())
+            }
+            if cerchio1.contains(location) || cerchio2.contains(location) {
+                doStart = true
             }
         }
     }
@@ -126,7 +155,6 @@ class startScreen: SKScene {
         paths.addLine(to: CGPoint(x:width/2, y:height))
         
         // Start Button
-        //        let cerchio = SKShapeNode(circleOfRadius: CGFloat(width / 23))
         cerchio.position = CGPoint(x: width/2, y: height/5 * 4)
         cerchio.fillColor = .white
         cerchio.strokeColor = .red
@@ -145,14 +173,12 @@ class startScreen: SKScene {
         paths.addLine(to: CGPoint(x:width/3*2, y:height/3))
         
         // Hider
-        let cerchio1 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
         cerchio1.position = CGPoint(x: width/3, y: height/5 * 3)
         cerchio1.fillColor = .white
         cerchio1.strokeColor = .red
         scenex.addChild(cerchio1)
         
         // Seeker
-        let cerchio2 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
         cerchio2.position = CGPoint(x: width/3*2, y: height/2)
         cerchio2.fillColor = .white
         cerchio2.strokeColor = .red
@@ -210,8 +236,8 @@ class settingsScreen: SKScene {
         //        let cerchio4 = SKShapeNode(circleOfRadius: CGFloat(width / 23))
         let cerchio5 = SKShapeNode(circleOfRadius: CGFloat(width / 26))
         let cerchio6 = SKShapeNode(circleOfRadius: CGFloat(width / 26))
-
-
+        
+        
         
         let xalign = width/4
         paths.move(to: CGPoint(x:xalign, y:0))
@@ -313,7 +339,7 @@ class achievementsScreen: SKScene {
         let scenex = self.scene!
         let cerchio = SKShapeNode(circleOfRadius: CGFloat(width / 23))
         let rettangolo = SKShapeNode(rect: CGRect(x: width/3, y: height/5*2, width: width/5*2, height: height/6))
-
+        
         let xalign = width/4
         paths.move(to: CGPoint(x:xalign, y:0))
         paths.addLine(to: CGPoint(x:xalign, y:height))
