@@ -25,57 +25,48 @@ struct MenuView: View {
                 .frame(width: 4, height: UIScreen.screenHeight, alignment: .center)
     
             VStack(spacing: 60){
-                
                 Button{
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    status = 1
+                    print(status)
                 } label: {
                     Circle()
                         .fill(.white)
                         .frame(width: radius, height: radius, alignment: .center)
                         .overlay(Image("Tutorials"))
-                        .onTapGesture{
-                            status = 1
-                            print(status)
-                        }
+//                        .onTapGesture{
+//                            status = 1
+//                            print(status)
+//                        }
                     }
                 
                 Button{
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    status = 2
+                    print(status)
                 } label:{
                     Circle()
                         .fill(.white)
                         .frame(width: radius, height: radius, alignment: .center)
                         .overlay(Image("Settings"))
-                        .onTapGesture{
-                            status = 2
-                            print(status)
-                        }
                     }
                 
                 Button{
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    status = 3
+                    print(status)
                 } label:{
                     Circle()
                         .fill(.white)
                         .frame(width: radius, height: radius, alignment: .center)
                         .overlay(Image("Achievements"))
-                        .onTapGesture{
-                            status = 3
-                            print(status)
-                        }
                     }
                 
                 Button{
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    status = 4
+                    print(status)
                 } label:{
                     Circle()
                         .fill(.white)
                         .frame(width: radius, height: radius, alignment: .center)
                         .overlay(Image("Start"))
-                        .onTapGesture{
-                            status = 3
-                            print(status)
-                        }
                     }
     
                 Spacer()
