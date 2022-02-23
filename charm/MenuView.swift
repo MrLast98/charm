@@ -33,10 +33,6 @@ struct MenuView: View {
                         .fill(.white)
                         .frame(width: radius, height: radius, alignment: .center)
                         .overlay(Image("Tutorials"))
-//                        .onTapGesture{
-//                            status = 1
-//                            print(status)
-//                        }
                     }
                 
                 Button{
@@ -68,7 +64,6 @@ struct MenuView: View {
                         .frame(width: radius, height: radius, alignment: .center)
                         .overlay(Image("Start"))
                     }
-    
                 Spacer()
             }
             .padding(.top, 204)
