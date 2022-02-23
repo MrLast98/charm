@@ -1,0 +1,4 @@
+/* Bundle name */
+"CFBundleName" = "charm";
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Yes";

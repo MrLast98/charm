@@ -23,47 +23,92 @@ struct MenuView: View {
             Rectangle()
                 .fill(.white)
                 .frame(width: 4, height: UIScreen.screenHeight, alignment: .center)
-    
+            
             VStack(spacing: 60){
-                Button{
-                    status = 1
-                    print(status)
-                } label: {
-                    Circle()
-                        .fill(.white)
-                        .frame(width: radius, height: radius, alignment: .center)
-                        .overlay(Image("Tutorials"))
-                    }
                 
-                Button{
-                    status = 2
-                    print(status)
-                } label:{
-                    Circle()
-                        .fill(.white)
-                        .frame(width: radius, height: radius, alignment: .center)
-                        .overlay(Image("Settings"))
+                HStack{
+                    Text("Tutorials")
+                        .font(.title3)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .multilineTextAlignment(.trailing)
+                    
+                    Button{
+                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    } label: {
+                        Circle()
+                            .fill(.white)
+                            .frame(width: radius, height: radius, alignment: .center)
+                            .overlay(Image("Tutorials"))
+                            .onTapGesture{
+                                status = 1
+                                print(status)
+                            }
                     }
+                }
+                .padding(.trailing, 80)
                 
-                Button{
-                    status = 3
-                    print(status)
-                } label:{
-                    Circle()
-                        .fill(.white)
-                        .frame(width: radius, height: radius, alignment: .center)
-                        .overlay(Image("Achievements"))
+                HStack{
+                    Button{
+                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    } label:{
+                        Circle()
+                            .fill(.white)
+                            .frame(width: radius, height: radius, alignment: .center)
+                            .overlay(Image("Settings"))
+                            .onTapGesture{
+                                status = 2
+                                print(status)
+                            }
                     }
+                    .padding(.leading, 75.5)
+                    
+                    Text("Settings")
+                        .font(.title3)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .multilineTextAlignment(.trailing)
+                }
                 
-                Button{
-                    status = 4
-                    print(status)
-                } label:{
-                    Circle()
-                        .fill(.white)
-                        .frame(width: radius, height: radius, alignment: .center)
-                        .overlay(Image("Start"))
+                HStack{
+                    Text("Achievements")
+                        .font(.title3)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .multilineTextAlignment(.trailing)
+                    Button{
+                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    } label:{
+                        Circle()
+                            .fill(.white)
+                            .frame(width: radius, height: radius, alignment: .center)
+                            .overlay(Image("Achievements"))
+                            .onTapGesture{
+                                status = 3
+                                print(status)
+                            }
                     }
+                }
+                .padding(.trailing, 122.5)
+                
+                
+                HStack{
+                    Button{
+                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    } label:{
+                        Circle()
+                            .fill(.white)
+                            .frame(width: radius, height: radius, alignment: .center)
+                            .overlay(Image("Start"))
+                            .onTapGesture{
+                                status = 3
+                                print(status)
+                            }
+                    }
+                    Text("Start")
+                        .font(.title3)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .multilineTextAlignment(.trailing)
+                }
+                .padding(.leading, 50)
+                
                 Spacer()
             }
             .padding(.top, 204)
