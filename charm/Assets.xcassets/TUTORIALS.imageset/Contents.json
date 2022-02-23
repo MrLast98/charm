@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "TUTORIALS-2.svg",
+      "filename" : "Tutorials.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "TUTORIALS-1.svg",
+      "filename" : "Tutorials-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "TUTORIALS.svg",
+      "filename" : "Tutorials-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
