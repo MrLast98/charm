@@ -17,4 +17,31 @@
       </trans-unit>
     </body>
   </file>
+  <file original="charm/en.lproj/Localizable.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.2.1" build-num="13C100"/>
+    </header>
+    <body>
+      <trans-unit id="Achievements" xml:space="preserve">
+        <source>Achievements</source>
+        <target>Achievements</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Settings" xml:space="preserve">
+        <source>Settings</source>
+        <target>Settings</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Start" xml:space="preserve">
+        <source>Start</source>
+        <target>Start</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Tutorials" xml:space="preserve">
+        <source>Tutorials</source>
+        <target>Tutorials</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>

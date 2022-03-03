@@ -11,10 +11,15 @@
 		0B4139FE27BD0F970008FB2C /* Prova.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0B4139FD27BD0F970008FB2C /* Prova.rcproject */; };
 		0B413A0127BD14C80008FB2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4139FF27BD14C80008FB2C /* ContentView.swift */; };
 		0B413A0227BD14C80008FB2C /* charmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B413A0027BD14C80008FB2C /* charmApp.swift */; };
+		0B4D5EBD27CCFEC800D831D2 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D5EBC27CCFEC800D831D2 /* ChoiceView.swift */; };
 		0B6CBEBA27C5044D006E2647 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6CBEB927C5044D006E2647 /* MenuView.swift */; };
 		0B6CBEBD27C50838006E2647 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6CBEBC27C50838006E2647 /* Lottie */; };
 		0B705EC327BE9118009A8B59 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B705EC227BE9118009A8B59 /* ARView.swift */; };
+		0BB1BB2927C838910075DA79 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1BB2827C838910075DA79 /* SettingsView.swift */; };
 		0BEFEB4827BE9D3B00EA94CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BEFEB4727BE9D3B00EA94CA /* Assets.xcassets */; };
+		0BF9FA4527D0C43B00282EE8 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9FA4427D0C43B00282EE8 /* TutorialView.swift */; };
+		0BFD4B8F27C6819C0044128A /* SeekerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD4B8E27C6819C0044128A /* SeekerView.swift */; };
+		0BFD4B9327C79E4B0044128A /* CompassHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD4B9227C79E4B0044128A /* CompassHeading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +27,15 @@
 		0B4139FD27BD0F970008FB2C /* Prova.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Prova.rcproject; sourceTree = "<group>"; };
 		0B4139FF27BD14C80008FB2C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0B413A0027BD14C80008FB2C /* charmApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = charmApp.swift; sourceTree = "<group>"; };
+		0B4D5EBC27CCFEC800D831D2 /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
 		0B6CBEB927C5044D006E2647 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		0B705EC227BE9118009A8B59 /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
 		0B97ED2D27BF171000F12193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0BB1BB2827C838910075DA79 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0BEFEB4727BE9D3B00EA94CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0BF9FA4427D0C43B00282EE8 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		0BFD4B8E27C6819C0044128A /* SeekerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekerView.swift; sourceTree = "<group>"; };
+		0BFD4B9227C79E4B0044128A /* CompassHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassHeading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +72,16 @@
 			children = (
 				0B97ED2D27BF171000F12193 /* Info.plist */,
 				0B4139FD27BD0F970008FB2C /* Prova.rcproject */,
+				0BEFEB4727BE9D3B00EA94CA /* Assets.xcassets */,
 				0B413A0027BD14C80008FB2C /* charmApp.swift */,
 				0B4139FF27BD14C80008FB2C /* ContentView.swift */,
 				0B705EC227BE9118009A8B59 /* ARView.swift */,
 				0B6CBEB927C5044D006E2647 /* MenuView.swift */,
-				0BEFEB4727BE9D3B00EA94CA /* Assets.xcassets */,
+				0B4D5EBC27CCFEC800D831D2 /* ChoiceView.swift */,
+				0BB1BB2827C838910075DA79 /* SettingsView.swift */,
+				0BF9FA4427D0C43B00282EE8 /* TutorialView.swift */,
+				0BFD4B8E27C6819C0044128A /* SeekerView.swift */,
+				0BFD4B9227C79E4B0044128A /* CompassHeading.swift */,
 			);
 			path = charm;
 			sourceTree = "<group>";
@@ -117,6 +132,9 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
+				es,
+				fr,
 			);
 			mainGroup = 0B4139D027BD02590008FB2C;
 			packageReferences = (
@@ -149,9 +167,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B6CBEBA27C5044D006E2647 /* MenuView.swift in Sources */,
+				0B4D5EBD27CCFEC800D831D2 /* ChoiceView.swift in Sources */,
+				0BB1BB2927C838910075DA79 /* SettingsView.swift in Sources */,
 				0B413A0127BD14C80008FB2C /* ContentView.swift in Sources */,
 				0B705EC327BE9118009A8B59 /* ARView.swift in Sources */,
+				0BFD4B8F27C6819C0044128A /* SeekerView.swift in Sources */,
+				0BFD4B9327C79E4B0044128A /* CompassHeading.swift in Sources */,
 				0B413A0227BD14C80008FB2C /* charmApp.swift in Sources */,
+				0BF9FA4527D0C43B00282EE8 /* TutorialView.swift in Sources */,
 				0B4139FE27BD0F970008FB2C /* Prova.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,17 +310,20 @@
 				DEVELOPMENT_TEAM = 4ALP2SL4P6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = charm/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = Yes;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is only used for and during the AR Experience ";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "I need to write this";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to know your location to track the distance between you and the treasure";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "arkit nfc";
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.totemfallico.charm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -316,17 +342,20 @@
 				DEVELOPMENT_TEAM = 4ALP2SL4P6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = charm/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = Yes;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is only used for and during the AR Experience ";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "I need to write this";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to know your location to track the distance between you and the treasure";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "arkit nfc";
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.totemfallico.charm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
