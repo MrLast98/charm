@@ -25,7 +25,7 @@ final class SeekerView: View {
                 Path { path in
                     path.move(to: CGPoint(x: width / 2, y: height / 2))
                     path.addArc(center: CGPoint(x: width / 2, y: height / 2), radius: width / 3, startAngle: Angle(degrees: -135.0), endAngle: Angle(degrees: -45.0), clockwise: false)
-                }.fill(.red)
+                }.fill(Color.accentColor)
                 //                        .offset(x: 0, y: 8)
                 
                 // White Arch

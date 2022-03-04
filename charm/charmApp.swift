@@ -11,7 +11,7 @@ import SwiftUI
 struct charmApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(pickedView: .settings)
+            ContentView(pickedView: .menu)
         }
     }
 }

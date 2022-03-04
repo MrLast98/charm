@@ -11,9 +11,19 @@
         <note>Bundle name</note>
       </trans-unit>
       <trans-unit id="NSCameraUsageDescription" xml:space="preserve">
-        <source>Yes</source>
-        <target>Yes</target>
+        <source>Camera is only used for and during the AR Experience </source>
+        <target>Camera is only used for and during the AR Experience </target>
         <note>Privacy - Camera Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSLocationAlwaysAndWhenInUseUsageDescription" xml:space="preserve">
+        <source>I need to write this</source>
+        <target>I need to write this</target>
+        <note>Privacy - Location Always and When In Use Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSLocationWhenInUseUsageDescription" xml:space="preserve">
+        <source>We need to know your location to track the distance between you and the treasure</source>
+        <target>We need to know your location to track the distance between you and the treasure</target>
+        <note>Privacy - Location When In Use Usage Description</note>
       </trans-unit>
     </body>
   </file>
@@ -27,9 +37,26 @@
         <target>Achievements</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Charm is a game aimed to create childhood dynamics. &#10; Challenge your opponent hiding the cube in the surroundings, play with nothing but your fantasy!" xml:space="preserve">
+        <source>Charm is a game aimed to create childhood dynamics. 
+ Challenge your opponent hiding the cube in the surroundings, play with nothing but your fantasy!</source>
+        <target>Charm is a game aimed to create childhood dynamics. 
+ Challenge your opponent hiding the cube in the surroundings, play with nothing but your fantasy!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Music" xml:space="preserve">
+        <source>Music</source>
+        <target>Music</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Settings" xml:space="preserve">
         <source>Settings</source>
         <target>Settings</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Sound Effects" xml:space="preserve">
+        <source>Sound Effects</source>
+        <target>Sound Effects</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Start" xml:space="preserve">
@@ -40,6 +67,11 @@
       <trans-unit id="Tutorials" xml:space="preserve">
         <source>Tutorials</source>
         <target>Tutorials</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="User" xml:space="preserve">
+        <source>User</source>
+        <target>User</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>

@@ -1,4 +1,8 @@
 /* Bundle name */
 "CFBundleName" = "charm";
 /* Privacy - Camera Usage Description */
-"NSCameraUsageDescription" = "Yes";
+"NSCameraUsageDescription" = "Camera is only used for and during the AR Experience ";
+/* Privacy - Location Always and When In Use Usage Description */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "I need to write this";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "We need to know your location to track the distance between you and the treasure";

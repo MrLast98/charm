@@ -124,7 +124,7 @@ class Coordinator: NSObject, ARSessionDelegate {
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         guard let view = self.view else { return }
         debugPrint("Anchors added to the scene: ", anchors)
-        self.focusEntity = FocusEntity(on: view, style: .classic(color: .red))
+        self.focusEntity = FocusEntity(on: view, style: .classic(color: .white))
     }
     
     @objc func handleTap() {
