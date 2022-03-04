@@ -1,11 +1,26 @@
 /* No comment provided by engineer. */
+"%lld / %lld" = "%lld / %lld";
+
+/* No comment provided by engineer. */
 "Achievements" = "Achievements";
 
 /* No comment provided by engineer. */
-"Charm is a game aimed to create childhood dynamics. \n Challenge your opponent hiding the cube in the surroundings, play with nothing but your fantasy!" = "Charm is a game aimed to create childhood dynamics. \n Challenge your opponent hiding the cube in the surroundings, play with nothing but your fantasy!";
+"As a Seeker, track the Charm with the Compass, the Radar and through AR Hints!" = "As a Seeker, track the Charm with the Compass, the Radar and through AR Hints!";
+
+/* No comment provided by engineer. */
+"CHARM is an AR experience you have with your friends. Dive back into your childhood memories," = "CHARM is an AR experience you have with your friends. Dive back into your childhood memories,";
+
+/* No comment provided by engineer. */
+"Hide your little Charm around you and challenge your friend to find it." = "Hide your little Charm around you and challenge your friend to find it.";
+
+/* No comment provided by engineer. */
+"I don't even know really tbh" = "I don't even know really tbh";
 
 /* No comment provided by engineer. */
 "Music" = "Music";
+
+/* No comment provided by engineer. */
+"Play one game" = "Play one game";
 
 /* No comment provided by engineer. */
 "Settings" = "Settings";
@@ -21,4 +36,7 @@
 
 /* No comment provided by engineer. */
 "User" = "User";
+
+/* No comment provided by engineer. */
+"Username" = "Username";
 

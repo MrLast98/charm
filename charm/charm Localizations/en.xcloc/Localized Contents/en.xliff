@@ -32,21 +32,44 @@
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.2.1" build-num="13C100"/>
     </header>
     <body>
+      <trans-unit id="%lld / %lld" xml:space="preserve">
+        <source>%lld / %lld</source>
+        <target>%lld / %lld</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Achievements" xml:space="preserve">
         <source>Achievements</source>
         <target>Achievements</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Charm is a game aimed to create childhood dynamics. &#10; Challenge your opponent hiding the cube in the surroundings, play with nothing but your fantasy!" xml:space="preserve">
-        <source>Charm is a game aimed to create childhood dynamics. 
- Challenge your opponent hiding the cube in the surroundings, play with nothing but your fantasy!</source>
-        <target>Charm is a game aimed to create childhood dynamics. 
- Challenge your opponent hiding the cube in the surroundings, play with nothing but your fantasy!</target>
+      <trans-unit id="As a Seeker, track the Charm with the Compass, the Radar and through AR Hints!" xml:space="preserve">
+        <source>As a Seeker, track the Charm with the Compass, the Radar and through AR Hints!</source>
+        <target>As a Seeker, track the Charm with the Compass, the Radar and through AR Hints!</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="CHARM is an AR experience you have with your friends. Dive back into your childhood memories," xml:space="preserve">
+        <source>CHARM is an AR experience you have with your friends. Dive back into your childhood memories,</source>
+        <target>CHARM is an AR experience you have with your friends. Dive back into your childhood memories,</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Hide your little Charm around you and challenge your friend to find it." xml:space="preserve">
+        <source>Hide your little Charm around you and challenge your friend to find it.</source>
+        <target>Hide your little Charm around you and challenge your friend to find it.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="I don't even know really tbh" xml:space="preserve">
+        <source>I don't even know really tbh</source>
+        <target>I don't even know really tbh</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Music" xml:space="preserve">
         <source>Music</source>
         <target>Music</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Play one game" xml:space="preserve">
+        <source>Play one game</source>
+        <target>Play one game</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Settings" xml:space="preserve">
@@ -72,6 +95,11 @@
       <trans-unit id="User" xml:space="preserve">
         <source>User</source>
         <target>User</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Username" xml:space="preserve">
+        <source>Username</source>
+        <target>Username</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
     </body>

@@ -199,14 +199,18 @@ struct SettingsView: View {
                             .foregroundColor(Color.accentColor)
                             .overlay(
                                 ScrollView(){
-                                    LazyVStack {
+                                    LazyVStack(alignment: .leading) {
                                         ForEach(av.achievements) { a in
                                             HStack {
-                                                if a.isRead {
-                                                    Circle()
-                                                        .fill(.white)
-                                                        .frame(width: radius / 5, height: radius / 5)
-                                                }
+                                                Circle()
+                                                    .fill(.white)
+                                                    .frame(width: radius / 5, height: radius / 5)
+                                                    .overlay(
+                                                        Circle()
+                                                            .fill(a.isRead ? .white : Color.accentColor)
+                                                            .frame(width: radius * 0.15, height: radius * 0.15)
+                                                    )
+                                                
                                                 VStack(alignment: .leading) {
                                                     Text(a.title)
                                                         .font(.headline)
@@ -224,7 +228,7 @@ struct SettingsView: View {
                                             }
                                         }
                                     }
-                                }.frame(width: UIScreen.screenWidth * 0.74, height: UIScreen.screenHeight * 0.28, alignment: .leading)
+                                }.frame(width: UIScreen.screenWidth * 0.69, height: UIScreen.screenHeight * 0.28, alignment: .leading)
                             )
                     }.offset(x: UIScreen.screenWidth / 8, y: -UIScreen.screenHeight / 20)
                 }
