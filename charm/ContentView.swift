@@ -27,17 +27,17 @@ struct ContentView: View {
     var body: some View {
         switch pickedView {
         case .tutorial:
-            TutorialView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all)
+            TutorialView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all).preferredColorScheme(.dark)
         case .menu:
-            MenuView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all)
+            MenuView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all).preferredColorScheme(.dark)
         case .settings:
-            SettingsView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all)
+            SettingsView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all).preferredColorScheme(.dark)
         case .achievements:
-            SettingsView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all)
+            SettingsView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all).preferredColorScheme(.dark)
         case .start:
-            ChoiceView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all)
+            ChoiceView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all).preferredColorScheme(.dark)
         case .seeker:
-            ChoiceView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all)
+            ChoiceView(pageSwitch: $pickedView).edgesIgnoringSafeArea(.all).preferredColorScheme(.dark)
         case .hider:
             ZStack {
                 MARView().edgesIgnoringSafeArea(.all)

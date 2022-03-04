@@ -57,6 +57,6 @@ struct ChoiceView: View {
                         .overlay(Image("Seeker"))
                 }
             }
-        }
+        }.border(.red)
     }
 }

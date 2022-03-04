@@ -17,16 +17,18 @@ enum settings: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
 }
 
-//struct settings:
-
 struct SettingsView: View {
+    @StateObject fileprivate var av = AchievementView()
     @Binding var pageSwitch: status
     @State var switchSettings: settings = .sfx
+    @State var sfxVolume: Float = 50.0
+    @State var musicVolume: Float = 50.0
+    @State var username: String = ""
     
     var base = Path{ path in
         path.move(to: CGPoint(x: UIScreen.screenWidth / 6, y: UIScreen.screenHeight / 7 * 2))
         path.addLine(to: CGPoint(x: UIScreen.screenWidth / 3, y: UIScreen.screenHeight / 3))
-        path.addLine(to: CGPoint(x: UIScreen.screenWidth / 3, y: UIScreen.screenHeight / 5 * 3))
+        path.addLine(to: CGPoint(x: UIScreen.screenWidth / 3, y: UIScreen.screenHeight * 0.55))
     }
     
     var sfx = Path{ path in
@@ -36,11 +38,20 @@ struct SettingsView: View {
     }
     
     var music = Path{ path in
-        path.move(to: CGPoint(x: UIScreen.screenWidth / 3, y: UIScreen.screenHeight / 4))
-        path.addLine(to: CGPoint(x: UIScreen.screenWidth / 2, y: UIScreen.screenHeight / 4 * 3))
+        path.move(to: CGPoint(x: UIScreen.screenWidth / 3, y: UIScreen.screenHeight * 0.47))
+        path.addLine(to: CGPoint(x: UIScreen.screenWidth / 5 * 2, y: UIScreen.screenHeight / 2))
+        path.addLine(to: CGPoint(x: UIScreen.screenWidth / 2, y: UIScreen.screenHeight / 2))
     }
     
+    var user = Path{ path in
+        path.move(to: CGPoint(x: UIScreen.screenWidth / 3, y: UIScreen.screenHeight * 0.55))
+        path.addLine(to: CGPoint(x: UIScreen.screenWidth * 0.43, y: UIScreen.screenHeight * 0.6))
+    }
     
+    var achievements = Path{ path in
+        path.move(to: CGPoint(x: UIScreen.screenWidth / 6, y: UIScreen.screenHeight / 3))
+        path.addLine(to: CGPoint(x: UIScreen.screenWidth / 4, y: UIScreen.screenHeight * 0.43))
+    }
     
     var body: some View {
         ZStack{
@@ -57,26 +68,33 @@ struct SettingsView: View {
                         RoundedRectangle(cornerRadius: 30)
                             .frame(width: UIScreen.screenWidth / 2, height: radius * 0.75)
                             .foregroundColor(Color.accentColor)
-//                            .overlay(Slider())
+                            .overlay(Slider(value: $musicVolume, in: 0...100).accentColor(.white).padding())
                     }
                 case .sfx:
                     HStack{
                         sfx.stroke(lineWidth: 4).foregroundColor(Color.accentColor)
-                        RoundedRectangle(cornerRadius: 30)
-                            .frame(width: UIScreen.screenWidth / 2, height: radius * 0.75)
-                            .offset(y: -UIScreen.screenHeight / 14)
-                            .foregroundColor(Color.accentColor)
-//                            .overlay(Slider())
+                        Group {
+                            RoundedRectangle(cornerRadius: 30)
+                                .frame(width: UIScreen.screenWidth / 2, height: radius * 0.75)
+                                .foregroundColor(Color.accentColor)
+                                .overlay(Slider(value: $sfxVolume, in: 0...100).accentColor(.white).padding())
+                        }.offset(y: -UIScreen.screenHeight / 14)
                     }
                 case .username:
                     HStack{
-                        sfx.stroke(lineWidth: 4).foregroundColor(Color.accentColor)
+                        user.stroke(lineWidth: 4).foregroundColor(Color.accentColor)
                         RoundedRectangle(cornerRadius: 30)
-                            .frame(width: UIScreen.screenWidth / 2, height: radius * 0.75)
+                            .frame(width: UIScreen.screenWidth * 0.6, height: radius * 1.5)
                             .foregroundColor(Color.accentColor)
-//                            .overlay(Slider())
+                            .overlay(HStack{
+                                Image("addIcon")
+                                TextField("Username", text: $username)
+                            }.padding())
+                            .offset(y: UIScreen.screenHeight / 7)
                     }
                 }
+            } else if pageSwitch == .achievements {
+                achievements.stroke(lineWidth: 4).foregroundColor(Color.accentColor)
             }
             
             VStack(alignment: .leading, spacing: 60){
@@ -174,7 +192,42 @@ struct SettingsView: View {
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         .foregroundColor(pageSwitch == .achievements ? Color.accentColor : .white)
                 }
-                
+                if pageSwitch == .achievements {
+                    HStack(spacing: 0){
+                        RoundedRectangle(cornerRadius: 30)
+                            .frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight / 3)
+                            .foregroundColor(Color.accentColor)
+                            .overlay(
+                                ScrollView(){
+                                    LazyVStack {
+                                        ForEach(av.achievements) { a in
+                                            HStack {
+                                                if a.isRead {
+                                                    Circle()
+                                                        .fill(.white)
+                                                        .frame(width: radius / 5, height: radius / 5)
+                                                }
+                                                VStack(alignment: .leading) {
+                                                    Text(a.title)
+                                                        .font(.headline)
+                                                        .fontWeight(.semibold)
+                                                    HStack{
+                                                        Text(a.description)
+                                                            .font(.subheadline)
+                                                            .fontWeight(.semibold)
+                                                        Text("\(a.stepsDone) / \(a.steps)")
+                                                            .font(.footnote)
+                                                            .fontWeight(.none)
+                                                            .frame(alignment: .bottomTrailing)
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }.frame(width: UIScreen.screenWidth * 0.74, height: UIScreen.screenHeight * 0.28, alignment: .leading)
+                            )
+                    }.offset(x: UIScreen.screenWidth / 8, y: -UIScreen.screenHeight / 20)
+                }
                 HStack(alignment: .center, spacing: 5){
                     Button{
                         pageSwitch = .start
@@ -188,7 +241,7 @@ struct SettingsView: View {
                         .font(.title3)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 }
-            }.frame(height: UIScreen.screenHeight / 6 * 5).offset(x: -UIScreen.screenWidth / 6)
+            }.frame(height: UIScreen.screenHeight / 6 * 5).offset(x: -UIScreen.screenWidth / (pageSwitch == .achievements ? 30 : 6))
         }.padding(.top)
     }
 }
