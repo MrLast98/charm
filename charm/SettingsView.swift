@@ -17,6 +17,8 @@ enum settings: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
 }
 
+//struct settings:
+
 struct SettingsView: View {
     @Binding var pageSwitch: status
     @State var switchSettings: settings = .sfx
@@ -54,6 +56,8 @@ struct SettingsView: View {
                         music.stroke(lineWidth: 4).foregroundColor(Color.accentColor)
                         RoundedRectangle(cornerRadius: 30)
                             .frame(width: UIScreen.screenWidth / 2, height: radius * 0.75)
+                            .foregroundColor(Color.accentColor)
+//                            .overlay(Slider())
                     }
                 case .sfx:
                     HStack{
@@ -61,12 +65,16 @@ struct SettingsView: View {
                         RoundedRectangle(cornerRadius: 30)
                             .frame(width: UIScreen.screenWidth / 2, height: radius * 0.75)
                             .offset(y: -UIScreen.screenHeight / 14)
+                            .foregroundColor(Color.accentColor)
+//                            .overlay(Slider())
                     }
                 case .username:
                     HStack{
                         sfx.stroke(lineWidth: 4).foregroundColor(Color.accentColor)
                         RoundedRectangle(cornerRadius: 30)
                             .frame(width: UIScreen.screenWidth / 2, height: radius * 0.75)
+                            .foregroundColor(Color.accentColor)
+//                            .overlay(Slider())
                     }
                 }
             }
@@ -111,7 +119,7 @@ struct SettingsView: View {
                             Circle()
                                 .fill(switchSettings == .sfx ? Color.accentColor : .white)
                                 .frame(width: radius * 0.75 , height: radius  * 0.75)
-                                .overlay(Image("Sound"))
+                                .overlay(Image(switchSettings == .sfx ? "Sound-White" : "Sound"))
                                 .onTapGesture {
                                     switchSettings = .sfx
                                 }
@@ -124,7 +132,7 @@ struct SettingsView: View {
                             Circle()
                                 .fill(switchSettings == .music ? Color.accentColor : .white)
                                 .frame(width: radius * 0.75 , height: radius  * 0.75)
-                                .overlay(Image("Volume-White"))
+                                .overlay(Image(switchSettings == .music ? "Volume-White" : "Volume"))
                                 .onTapGesture {
                                     switchSettings = .music
                                 }
@@ -137,7 +145,7 @@ struct SettingsView: View {
                             Circle()
                                 .fill(switchSettings == .username ? Color.accentColor : .white)
                                 .frame(width: radius * 0.75 , height: radius * 0.75)
-                                .overlay(Image("User"))
+                                .overlay(Image(switchSettings == .username ? "User-White" : "User"))
                                 .onTapGesture {
                                     switchSettings = .username
                                 }
@@ -145,7 +153,7 @@ struct SettingsView: View {
                                 .font(.headline)
                                 .fontWeight(.semibold)
                         }.frame(width: UIScreen.screenWidth / 2, height: radius * 0.75, alignment: .leading)
-                    }.frame(width: radius).offset(x: UIScreen.screenWidth / 3)
+                    }.frame(width: radius).offset(x: (UIScreen.screenWidth / 5 * 2) - 15, y: -(UIScreen.screenHeight / 30))
                 }
                 
                 HStack(alignment: .center, spacing: 5){

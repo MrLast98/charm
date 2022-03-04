@@ -38,7 +38,7 @@ struct ChoiceView: View {
                     Circle()
                         .fill(.white)
                         .frame(width: radius, height: radius, alignment: .leading)
-                        .overlay(Image("Settings"))
+                        .overlay(Image("Hider"))
                 }.offset(y: -UIScreen.screenHeight / 10)
                 Button{
                     pageSwitch = .menu
@@ -54,7 +54,7 @@ struct ChoiceView: View {
                     Circle()
                         .fill(.white)
                         .frame(width: radius, height: radius, alignment: .leading)
-                        .overlay(Image("Hider"))
+                        .overlay(Image("Seeker"))
                 }
             }
         }
