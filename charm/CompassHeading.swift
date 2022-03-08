@@ -10,27 +10,29 @@ import Combine
 import CoreLocation
 
 class CompassHeading: NSObject, ObservableObject, CLLocationManagerDelegate {
-    @Published var distance = 100
     var destination: CLLocation
     var objectWillChange = PassthroughSubject<Void, Never>()
+    var position: CLLocation
     var degrees: Double = .zero {
         didSet {
             objectWillChange.send()
         }
     }
-    var position: CLLocation = .init() {
+    var distance: Double = 0.0 {
         didSet {
             objectWillChange.send()
         }
     }
+
     
     private let locationManager = CLLocationManager()
     
     init(location: CLLocation) {
         self.destination = location
+        self.position = self.locationManager.location!
         super.init()
         self.locationManager.delegate = self
-        //        self.locationManager.headingOrientation = .portrait
+        self.locationManager.headingOrientation = .portrait
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.distanceFilter = kCLDistanceFilterNone
         self.locationManager.requestWhenInUseAuthorization()
@@ -43,20 +45,21 @@ class CompassHeading: NSObject, ObservableObject, CLLocationManagerDelegate {
         self.locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.headingAvailable() {
-            self.locationManager.startUpdatingLocation()
             self.locationManager.startUpdatingHeading()
+            self.locationManager.startUpdatingLocation()
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         self.degrees = -1 * newHeading.magneticHeading
+        let position = manager.location!
+        self.distance = position.distance(from: self.destination)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let lastLocation = locations.last!
-        print(lastLocation)
+        let position = locations.last!
+        self.distance = position.distance(from: self.destination)
     }
-    
 }
 
 extension BinaryFloatingPoint {

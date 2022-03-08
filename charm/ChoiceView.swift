@@ -33,7 +33,7 @@ struct ChoiceView: View {
             full.stroke(lineWidth: 4).foregroundColor(.white)
             HStack {
                 Button{
-                    pageSwitch = .seeker
+                    pageSwitch = .hider
                 } label: {
                     Circle()
                         .fill(.white)
@@ -49,7 +49,7 @@ struct ChoiceView: View {
                         .overlay(Image("Start-White"))
                 }.offset(y: -UIScreen.screenHeight / 4)
                 Button{
-                    pageSwitch = .hider
+                    pageSwitch = .seekerCompass
                 } label: {
                     Circle()
                         .fill(.white)
@@ -57,6 +57,6 @@ struct ChoiceView: View {
                         .overlay(Image("Seeker"))
                 }
             }
-        }.border(.red)
+        }
     }
 }

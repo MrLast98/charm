@@ -11,7 +11,25 @@ import ARKit
 import FocusEntity
 import RealityKit
 
-struct MARView: UIViewRepresentable {
+
+struct MARView: View {
+    @Binding var pageSwitch: status
+    var body: some View {
+        ZStack {
+            CustomARView().edgesIgnoringSafeArea(.all)
+            Button{
+                pageSwitch = .menu
+            } label:{
+                Circle()
+                    .fill(Color.accentColor)
+                    .frame(width: radius, height: radius)
+                    .overlay(Image("Start-White"))
+            }.offset(x: -(width / 2) + radius, y: (height / 2) - radius)
+        }
+    }
+}
+
+struct CustomARView: UIViewRepresentable {
     let view = ARView()
     let coachingOverlay = ARCoachingOverlayView()
     
